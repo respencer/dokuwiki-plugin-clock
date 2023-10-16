@@ -1,0 +1,7 @@
+base   clock
+author Luis Machuca Bezzaza
+email  lambalicious@tuta.io
+date   2010-10-15
+name   Clock Plugin
+desc   Display a clock in DokuWiki
+url    https://www.dokuwiki.org/plugin:clock
