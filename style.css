@@ -1,0 +1,209 @@
+/** 
+ * @file       clock/style.css
+ * @brief      Default styles for the "clock" plugin
+ * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
+ * @author     Luis Machuca Bezzaza  <luis.machuca [at] gulix.cl>
+ * @version    1.5
+ * @link       http://www.dokuwiki.org/plugin:clock
+ */
+
+/* This file sets the default style for the "clock" plugin.
+ * Information available on wikipage.
+ */
+#dw_clock_object {
+  min-width: 6em;
+  padding: 0 2px;
+  }
+
+/** 
+ * ---------------------------------------------------------------------
+ * Style #0    : plain
+ * Description : pretty plain
+ * Features    : 
+ * With this style the face itself is not stulized, only some layout
+ * attributes are given as well as default style for the helpbar.
+ */
+#dw_clock_object .face.plain {
+  position: relative;
+  margin: 0 2em;
+  }
+
+
+/** 
+ * ---------------------------------------------------------------------
+ * Style #1    : default
+ * Description : a light-coloured wall-like clock
+ * Features    : monospaced font, wide margin and dark borders,
+ *               with the face colour following the template theme
+ */
+#dw_clock_object .face.default {
+  position: relative;
+  /*width: 120px;*/
+  margin: auto 6px;
+  }
+
+#dw_clock_object .face.default {
+  display: block;
+  font-family: monospace;
+  font-size: 1.5em;
+  text-align: center;
+  color: __text__;
+  border: 4px inset __text_alt__;
+  background-color: __background_alt__;
+  }
+
+
+/**
+ * ---------------------------------------------------------------------
+ * Style #2    : aradio
+ * Description : some description
+ * Features    : a clock using a digital clock font in yellow face in a 
+ *               black background and minor shadow.
+ *
+ * ---Warning---
+ * This style makes use of CSS3 @font-face specification, 
+ * which is only supported by decent (or incredible, like Opera) web browsers.
+ * **Check the plugin page for support and indications** 
+ *
+ * For full experience, it is _recommended_ to make the typeface available  
+ * to clients via a direct download link, and source that URL from here.
+ * Take into consideration the licensing of the typeface, and offer a 
+ * fallback or switch if it is now available at last as Freeware.
+ * ---End Warning---
+ */
+
+@font-face {
+  font-family: 'Atomic Clock Radio';
+  src: local('Atomic Clock Radio');
+  /* src: url(path/to/your/copy/of/atomicclockradio.ttf) format('truetype'); */
+  }
+
+#dw_clock_object .face.aradio {
+  padding: 4px;
+  padding-right: 1em;
+  background-color: #c4c8ee;
+  border: 2px solid #b6b6d8;
+  font-family: "Atomic Clock Radio", fantasy;
+  font-size: 14pt;
+  text-align: right;
+  letter-spacing: 0.6pt;
+  text-shadow: -2px 1px #884446;
+  color: #848861;
+  }
+
+#dw_clock_object .face.aradio span.sep {
+  color: #808080;
+  font-weight: bold;
+  }
+
+
+/**
+ * ---------------------------------------------------------------------
+ * Style #3    : tv24
+ * Description : "24"-like digital clock
+ * Features    : a clock using a digital clock font with yellow face in a 
+ *               black background and a shadow, degrading to monospace
+ *               if the digital clock is unavailable.
+ *
+ * ---Warning---
+ * This style makes use of CSS3 @font-face specification, 
+ * which is only supported by decent (or incredible, like Opera) web browsers.
+ * **Check the plugin page for support and indications** 
+ *
+ * For full experience, it is _recommended_ to make the typeface available  
+ * to clients via a direct download link, and source that URL from here.
+ * Take into consideration the licensing of the typeface, and offer a 
+ * fallback or switch if it is now available at last as Freeware.
+ * ---End Warning---
+ */
+
+/**
+ *  Warning: this defines a Truetype typeface with the following license:
+ * free-for-noncommercial-use (URW Software).
+ */
+@font-face {
+  font-family: 'lcdd';
+  src: local('LCDd');
+  /* src: url(path/to/your/copy/of/lcd.ttf) format('truetype'); */
+  }
+
+/**
+ *  Warning: this defines a Truetype typeface with the following license:
+ * freeware (????).
+ */
+@font-face {
+  font-family: 'Digital Readout';
+  src: local('Digital Readout');
+  /* src: url(path/to/your/copy/of/digitalreadout.ttf) format('truetype'); */
+  }
+
+#dw_clock_object .face.tv24 {
+  width: 75%;
+  min-width: 6em;
+  background-color: black;
+  border: 2px solid navy;
+  line-height: 20pt;
+  text-align: center;
+  font-family: "Digital Readout", "lcdd", monospace;
+  font-size: 14pt;
+  text-shadow: 2px 2px #404020;
+  letter-spacing: 0.2em; 
+  color: yellow;
+  }
+
+#dw_clock_object .face.tv24 .info {
+  position: absolute;
+  right: 0;
+  bottom: 0; 
+  border: 2px solid black;
+  }
+
+#dw_clock_object .face.tv24 .info:hover {
+  border: 2px solid __existing__;
+  }
+
+/**
+ * ---------------------------------------------------------------------
+ * Style #4    : bluebox
+ * Description : "24"-like digital clock
+ * Features    : a blue box with a white typeface, shadows.
+ *
+ *
+ * ---Warning---
+ * This style makes use of CSS3 @font-face specification, 
+ * which is only supported by decent (or incredible, like Opera) web browsers.
+ * **Check the plugin page for support and indications** 
+ *
+ * For full experience, it is _recommended_ to make the typeface available  
+ * to clients via a direct download link, and source that URL from here.
+ * Take into consideration the licensing of the typeface, and offer a 
+ * fallback or switch if it is now available at last as Freeware.
+ * ---End Warning---
+ */
+#dw_clock_object .face.bluebox {
+  width: 75%;
+  max-width: 8em;
+  background-color: #2222aa;
+  border: 4px solid navy;
+  border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; -o-border-radius: 6px;
+  line-height: 20pt;
+  text-align: center;
+  font-family: "Liberation", "Helvetica", cursive;
+  font-size: 14pt;
+  text-shadow: -1px 2px #80c080;
+  text-shadow: 2px -1px #882222;
+  letter-spacing: 0.2em; 
+  color: #e0f0e0;
+  }
+
+/* ---------------------------------------------------------------------
+ * Helpbar styling
+ */
+#dw_clock_object p.helpbar {
+  margin: 0 2em; 
+  padding: 0 0.5em;
+  background-color: __background_alt__;
+  border: 1px solid __existing__;
+  border-radius: 6px;
+  font-size: 90%;
+  }
