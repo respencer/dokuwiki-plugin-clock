@@ -59,12 +59,12 @@ function dwclock_tick () {
   setTimeout(dwclock_tick, 500);
   }
 
-addInitEvent( function() {
+jQuery( function() {
   if(document.getElementById("dw__editform")) { return; }
-  dwClockDOMObject = $(jsclock_id);
+  dwClockDOMObject = jQuery('#' + jsclock_id)[0];
   } );
 
-addInitEvent( function() {
+jQuery( function() {
   if(document.getElementById("dw__editform")) { return; }
   dwclock_tick();
   } );
